@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Admin{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1 class="p10">Admin</h1>
+  <div class="p10">
+  	<a href="/admin/statistics/">Statistics</a> | <a href="/admin/rounds/">Rounds</a>
+  </div>
+{% endblock %}

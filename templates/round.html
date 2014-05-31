@@ -1,0 +1,16 @@
+<li>
+	Question: <input type="text" value="{{elem.question}}" />
+	<br/>
+	Include in game: <input type="checkbox" {% if elem.inGame %} checked="checked" {% endif %} />
+	<br/>
+	<table>
+	{% for stat in statistics %}
+		<tr>
+			<td>{{stat.name}}</td>
+			<td><input type="number" value="{{elem[stat._id]|default(0)}}" class="w35" disabled="disabled"/></td>
+		</tr>
+	{% endfor %}
+	</table>
+	<input type="hidden" value="{{elem._id}}" />
+</li>
+<hr/>

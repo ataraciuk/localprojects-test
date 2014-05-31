@@ -1,0 +1,101 @@
+/* ---- reset css ---- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ---- end reset css ---- */
+body {
+	font-family: sans-serif;
+}
+h1 {
+	color:green;
+	font-size: 40px;
+}
+.p10{
+	padding: 10px 20px 0;
+}
+input[type="button"] {
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.add-btn{
+	background-color: #44ee44;
+	border: 2px outset #22cc22;
+}
+.add-btn:active{
+	background-color: #009900;
+	border: 2px inset #22bb22;	
+}
+.delete-btn{
+	background-color: #ff4444;
+	border: 2px outset #dd2222;
+}
+.delete-btn:active{
+	background-color: #aa0000;
+	border: 2px inset #cc2222;
+}
+.update-btn{
+	background-color: #66aaff;
+	border: 2px outset #4488dd;
+}
+.update-btn:active{
+	background-color: #1177aa;
+	border: 2px inset #4477cc;
+}
+.updated{
+	display: none;
+}
+.rounds li {
+	padding: 10px 0;
+}
+.w25 {
+	width: 25px;
+}
+.w35 {
+	width: 35px;
+}

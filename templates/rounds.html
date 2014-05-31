@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Admin - Rounds{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1 class="p10">Admin - Rounds</h1>
+  <div class="p10">
+  	<a href="/admin/statistics/">Statistics</a>
+  </div>
+  <div class="p10">
+	  <ul class="rounds">
+    {% for elem in elems %}
+      {% include "round.html" %}
+    {% endfor %}
+	  </ul>
+    New Question: <input type="text" value=""/><input type="button" value="Add Round" class="add-btn"/>
+  </div>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/rounds.js') }}"></script>
+{% endblock %}

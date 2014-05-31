@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Admin - Statistics{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1 class="p10">Admin - Statistics</h1>
+  <div class="p10">
+  	<a href="/admin/rounds/">Rounds</a>
+  </div>
+  <div class="p10">
+	  <ul class="statistics">
+	  {% for elem in elems %}
+	  	{% include "statistic.html" %}
+	  {% endfor %}
+	  </ul>
+	  <input type="text" value=""/><input type="button" value="Insert" class="add-btn"/>
+  </div>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/statistics.js') }}"></script>
+{% endblock %}
