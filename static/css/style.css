@@ -99,3 +99,19 @@ input[type="button"] {
 .w35 {
 	width: 35px;
 }
+table {
+	border: 1px solid black;
+	margin: 5px 0;
+}
+th {
+	border-bottom: 1px solid black;
+}
+td,th{
+	padding: 2px 5px;
+}
+.question-title{
+	width: 200px;
+}
+.add-btn{
+	margin-left: 6px;
+}

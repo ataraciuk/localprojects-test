@@ -1,16 +1,28 @@
 <li>
-	Question: <input type="text" value="{{elem.question}}" />
-	<br/>
-	Include in game: <input type="checkbox" {% if elem.inGame %} checked="checked" {% endif %} />
-	<br/>
-	<table>
-	{% for stat in statistics %}
-		<tr>
-			<td>{{stat.name}}</td>
-			<td><input type="number" value="{{elem[stat._id]|default(0)}}" class="w35" disabled="disabled"/></td>
-		</tr>
-	{% endfor %}
-	</table>
-	<input type="hidden" value="{{elem._id}}" />
+	<form>
+		Question: <input type="text" value="{{elem.question}}" class="question-title" name="question"/>
+		&nbsp;&nbsp;
+		Include in game: <input type="checkbox" {% if elem.inGame %} checked="checked" {% endif %} name="inGame"/>
+		<br/>
+		<table>
+			<tr>
+				<th>Statistic</th>
+				<th>Yes</th>
+				<th>No</th>
+			</tr>
+		{% for stat in statistics %}
+			<tr>
+				{% set u_stat_id = '%s'|format(stat._id) %}
+				<td>{{stat.name}}</td>
+				<td><input type="number" value="{{elem['yes'][u_stat_id]|default(0)}}" class="w35" min="-5" max="5" step="1" pattern="\d+" name="yes-{{stat._id}}"/></td>
+				<td><input type="number" value="{{elem['no'][u_stat_id]|default(0)}}" class="w35" min="-5" max="5" step="1" pattern="\d+" name="no-{{stat._id}}"/></td>
+			</tr>
+		{% endfor %}
+		</table>
+	</form>
+	<input type="hidden" value="{{elem._id}}"/>
+	<input type="button" value="Update" class="update-btn"/>
+	<input type="button" value="Delete" class="delete-btn"/>
+	<span class="updated">Updated!</span>
+	<hr/>
 </li>
-<hr/>
