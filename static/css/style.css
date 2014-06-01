@@ -137,6 +137,9 @@ td.score {
 #questionContainer {
 	height: 40px;
 }
+#questionContainer > input {
+	display: none;
+}
 #question {
 	font-size: 24px;
 }

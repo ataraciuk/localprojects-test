@@ -29,13 +29,7 @@ game.init = function() {
 		}
 		$('#question, input[type="button"]').hide();
 		game.currentRound++;
-		if(game.currentRound < game.rounds.length) {
-			game.showQuestion();
-			game.DOM.question.fadeIn(400, function(){$('input[type="button"]').show();});
-		} else {
-			game.DOM.question.html('Finish!');
-			game.DOM.question.fadeIn();
-		}
+		game.showQuestion();
 	});
 };
 
@@ -48,5 +42,6 @@ game.DOM = {
 };
 
 game.showQuestion = function() {
-	game.DOM.question.html(game.rounds[game.currentRound].question);
+	game.DOM.question.html(game.currentRound < game.rounds.length ? game.rounds[game.currentRound].question : 'Finish!');
+	game.DOM.question.fadeIn(400, game.currentRound < game.rounds.length ? function(){$('input[type="button"]').show();} : function(){});
 }
