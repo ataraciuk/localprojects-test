@@ -115,3 +115,28 @@ td,th{
 .add-btn{
 	margin-left: 6px;
 }
+.negative, .positive {
+	width: 40%;
+	border: 1px solid black;
+}
+.negative {
+	text-align: right;
+}
+.negative-bar, .positive-bar {
+	display: inline-block;
+	height: 30px;
+	background-color: red;
+}
+.positive-bar {
+	background-color: green;
+}
+td.score {
+	width: 40px;
+	text-align: center;
+}
+#questionContainer {
+	height: 40px;
+}
+#question {
+	font-size: 24px;
+}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}Game{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1 class="p10">Game</h1>
+  <div class="p10">
+  	<div id="questionContainer">
+	  	<span id="question"></span>
+	  	<input type="button" value="YES" class="add-btn"/>
+	  	<input type="button" value="NO" class="delete-btn"/>
+  	</div>
+  	<h2>Results</h2>
+  	<table>
+  	</table>
+  </div>
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/game.js') }}"></script>
+<script type="text/javascript">
+{% for stat in statistics %}
+	game.statistics['{{stat._id}}'] = {name:'{{stat.name}}', score: 0};
+{% endfor %}
+{% for round in rounds %}
+	game.rounds.push({yes: {}, no: {}, question:'{{round.question}}'});
+	{% set index = loop.index0 %}
+	{% for key, value in round.yes.iteritems() %}
+		game.rounds[{{index}}].yes['{{key}}'] = {{value}};
+	{% endfor %}
+	{% for key, value in round.no.iteritems() %}
+		game.rounds[{{index}}].no['{{key}}'] = {{value}};
+	{% endfor %}
+{% endfor %}
+game.maxScore = game.rounds.length * 5;
+game.init();
+</script>
+{% endblock %}

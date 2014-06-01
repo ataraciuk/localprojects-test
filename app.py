@@ -21,7 +21,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return  ', '.join(db.collection_names())
+	statistics = list(db.statistics.find())
+	rounds = db.rounds.find({'inGame':True})
+	return render_template('game.html', rounds=rounds, statistics=statistics)
 
 @app.route('/admin/')
 def admin():
